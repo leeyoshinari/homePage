@@ -31,10 +31,9 @@
 </head>
 <body>
 <header>
-    <div class="topBanner"></div>
     <div class="nav">
         <div class="navCenter">
-            <p>融科·花满庭</p>
+            <h2>融科 · 花满庭</h2>
         </div>
     </div>
 </header>
@@ -173,48 +172,48 @@
     </div>
     <div class="peripheral">
         <div class="title">
-            <h2 style="cursor: pointer">所有</h2>
-            <h2 style="cursor: pointer">小区内外</h2>
-            <h2 style="cursor: pointer">武汉留言板</h2>
+            <h2 style="cursor: pointer" onclick="showList('0')">所有</h2>
+            <h2 style="cursor: pointer" onclick="showList('1')">小区内外</h2>
+            <h2 style="cursor: pointer" onclick="showList('2')">武汉留言板</h2>
         </div>
         <ul class="detail">
-            <li>
+            <li class="showBlock" lang="1">
                 <div class="description">
                     <span>2023-08-08</span>
                     <h3><a href="baidu.com" target="_blank">90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸90分旅行箱 24寸</a></h3>
                 </div>
             </li>
-            <li>
+            <li class="showBlock" lang="2">
                 <div class="description">
                     <span>2023-08-08</span>
                     <h3><a href="baidu.com" target="_blank">90分旅行箱 24寸</a></h3>
                 </div>
             </li>
-            <li>
+            <li class="showBlock" lang="2">
                 <div class="description">
                     <span>2023-08-08</span>
                     <h3><a href="baidu.com" target="_blank">90分旅行箱 24寸</a></h3>
                 </div>
             </li>
-            <li>
+            <li class="showBlock" lang="1">
                 <div class="description">
                     <span>2023-08-08</span>
                     <h3><a href="baidu.com" target="_blank">90分旅行箱 24寸</a></h3>
                 </div>
             </li>
-            <li>
+            <li class="showBlock" lang="1">
                 <div class="description">
                     <span>2023-08-08</span>
                     <h3><a href="baidu.com" target="_blank">90分旅行箱 24寸</a></h3>
                 </div>
             </li>
-            <li>
+            <li class="showBlock" lang="2">
                 <div class="description">
                     <span>2023-08-08</span>
                     <h3><a href="baidu.com" target="_blank">90分旅行箱 24寸</a></h3>
                 </div>
             </li>
-            <li>
+            <li class="showBlock" lang="1">
                 <div class="description">
                     <span>2023-08-08</span>
                     <h3><a href="baidu.com" target="_blank">90分旅行箱 24寸</a></h3>
@@ -233,7 +232,6 @@
 <script type="text/javascript">
     let box_width = 234;
     let box_height = 300;
-    let row_height = 50;
     let screen_width = document.getElementsByClassName('mainbody')[0].clientWidth;
 
     change_bannerPic();
@@ -267,7 +265,29 @@
         }
 
         let peripheral = document.getElementsByClassName('peripheral')[0];
-        peripheral.style.height = peripheral.getElementsByClassName('list').length * (row_height + 12) + peripheral.getElementsByClassName('title')[0].clientHeight + 'px';
+        peripheral.style.height = peripheral.getElementsByTagName('li').length * (peripheral.getElementsByTagName('li')[0].clientHeight + 12) + peripheral.getElementsByClassName('title')[0].clientHeight + 'px';
+    }
+
+    function showList(lang) {
+        let peripheral = document.getElementsByClassName('peripheral')[0];
+        let lis = document.getElementsByClassName('detail')[0].getElementsByTagName('li');
+        let counter = 0;
+        if (lang === '0') {
+            for (let i = 0; i < lis.length; i++) {
+                lis[i].setAttribute('class', 'showBlock');
+                counter = counter + lis[i].clientHeight + 12;
+            }
+        } else {
+            for (let i = 0; i < lis.length; i++) {
+                if (lis[i].getAttribute('lang') === lang) {
+                    lis[i].setAttribute('class', 'showBlock');
+                    counter = counter + lis[i].clientHeight + 12;
+                } else {
+                    lis[i].setAttribute('class', 'showNone');
+                }
+            }
+        }
+        peripheral.style.height = counter + peripheral.getElementsByClassName('title')[0].clientHeight + 'px';
     }
 </script>
 </html>
