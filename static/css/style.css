@@ -340,16 +340,18 @@ header {
 
 .detail li span {
     width: 150px;
-    font-size: large;
     float: left;
 }
 
 .detail li h3 {
-    width: 85%;
+    width: 70%;
     overflow: hidden;
     white-space: nowrap;
     word-break: keep-all;
     text-overflow: ellipsis;
+}
+.detail a {
+    color: #4c4c4c;
 }
 
 .showNone {
