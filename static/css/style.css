@@ -6,12 +6,11 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
 body {
     font-weight: normal;
     font-style: normal;
-    font-size: 14px;
+    /*font-size: 14px;*/
     line-height: 1.5;
     font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
     color: #333;
     background-color: #fff;
-    /*min-width: 1226px;*/
 }
 
 a {
@@ -25,13 +24,11 @@ ul, ol {
 /***************************header start********************************/
 header {
     width: 100%;
-    /*height: 160px;*/
     overflow: hidden;
 }
 
 .nav {
     width: 100%;
-    /*height: 40px;*/
     background-color: #333;
 }
 
@@ -128,13 +125,11 @@ header {
 /***************************mainbody start********************************/
 .mainbody {
     width: 100%;
-    /*height: 2930px;*/
     padding-top: 60px;
     background-color: #f5f5f5;
 }
 
 .collocation, .accessories, .peripheral {
-    /*width: 1226px;*/
     height: 686px;
     width: 100%;
     margin: 0 auto 22px;
@@ -162,7 +157,6 @@ header {
 }
 
 .title {
-    /*width: 1226px;*/
     width: 96%;
     height: 58px;
     margin-left: 2%;
@@ -179,8 +173,6 @@ header {
 
 .list {
     width: 100%;
-    /*width: 1272px;*/
-    /*height: 614px;*/
     float: left;
 }
 
@@ -363,18 +355,16 @@ header {
 }
 /***************************mainbody end********************************/
 /***************************footer start********************************/
-footer {
-    width: 100%;
-    height: 110px;
-    background-color: #fafafa;
-}
+footer {width: 100%;}
 
 .slogan {
     width: 100%;
+    color: #d30202;
+    text-align: center;
     margin: 0 auto;
 }
-.slogan img {
-    width: 100%;
-    height: auto;
+.slogan div {
+    width: 90%;
+    margin-left: 5%;
 }
 /***************************footer end********************************/
