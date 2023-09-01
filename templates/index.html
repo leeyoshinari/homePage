@@ -61,6 +61,7 @@
             <h2>我们的工作</h2>
         </div>
         <ul class="list">
+            <li><img src="{{ context }}/static/images/2/3.jpg" alt=""><div class="description"><h3>融科花满庭小区2023年第一次临时业主大会会议小组会议纪要</h3></div></li>
             <li>
                 <img src="{{ context }}/static/images/2/640.jpg" alt="">
                 <div class="description"><h3>花满庭的昨天、今天、以及明天</h3><!--h4>149元</h4><p>3910人评价</p--></div>
@@ -185,7 +186,8 @@
     let lis = document.getElementsByClassName('collocation')[0].getElementsByTagName('li');
     let collocation_urls = [
         'https://mp.weixin.qq.com/s/0HTgYbg7jyw6UqGCvYqB5g',
-        'https://mp.weixin.qq.com/s/xl2-FLKV2djY4yrEI54etA', 'https://mp.weixin.qq.com/s/tPEzp4Nz1MJUT3_Um_BwkA'
+        'https://mp.weixin.qq.com/s/xl2-FLKV2djY4yrEI54etA', 'https://mp.weixin.qq.com/s/tPEzp4Nz1MJUT3_Um_BwkA',
+        '{{ context }}/static/images/2/融科花满庭小区2023年第一次临时业主大会会议小组会议纪要008号.pdf'
     ];
     for (let i=0; i<lis.length; i++) {
         lis[i].onclick = function () {
